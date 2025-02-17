@@ -141,10 +141,11 @@ app.post('/forgotPassword', async (req, res) => {
 
 
 // Start Server
-app.listen(3000, () => {
-  console.log('✅ Server running on http://192.168.55.65:3000');  // Replace with local IP
-});
+const PORT = process.env.PORT || 3000;  // ✅ Use Railway's assigned port
 
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
 
 
 // Create Class
